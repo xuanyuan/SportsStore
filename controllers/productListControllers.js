@@ -11,8 +11,10 @@ angular.module("sportsStore")
     $scope.pageSize = productListPageCount;
     $scope.selectCategory = function (newCategory) {
         selectedCategory = newCategory;
+        //每次点击选择分类，展示内容都是第一页
         $scope.selectedPage = 1;
     }
+    //选择页码
     $scope.selectPage = function (newPage) {
         $scope.selectedPage = newPage;
     }
@@ -23,6 +25,7 @@ angular.module("sportsStore")
     $scope.getCategoryClass = function (category) {
         return selectedCategory == category ? productListActiveClass : "";
     }
+    //使用样式
     $scope.getPageClass = function (page) {
         return $scope.selectedPage == page ? productListActiveClass : "";
     }
